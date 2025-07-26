@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <title>رفع عمل فني</title>
+</head>
+<body>
+  <h2>رفع عمل فني</h2>
+  <form id="upload-form">
+    <input type="text" id="title" placeholder="عنوان العمل" required><br>
+    <input type="file" id="image" accept="image/*" required><br>
+    <button type="submit">رفع</button>
+  </form>
+  <a href="index.html">⬅ العودة</a>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+  <script src="supabase-config.js"></script>
+  <script>
+    const form = document.getElementById("upload-form");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const title = document.getElementById("title").value;
+      const file = document.getElementById("image").files[0];
+
+      const { data: session } = await supabase.auth.getSession();
+      const user = session.session?.user;
+
+      if (!file || !title || !user) return alert("يجب تسجيل الدخول وملء الحقول");
+
+      const filename = `${Date.now()}_${file.name}`;
+      const { error: uploadError } = await supabase
+        .storage
+        .from('artworks')
+        .upload(filename, file);
+
+      if (uploadError) return alert("فشل رفع الصورة");
+
+      const { data: { publicUrl } } = supabase
+        .storage
+        .from('artworks')
+        .getPublicUrl(filename);
+
+      await supabase
+        .from('artworks')
+        .insert([{
+          title: title,
+          image_url: publicUrl,
+          likes: 0,
+          comments: [],
+          user_email: user.email,
+        }]);
+
+      alert("✅ تم رفع العمل بنجاح");
+      window.location.href = "index.html";
+    });
+  </script>
+</body>
+</html>
