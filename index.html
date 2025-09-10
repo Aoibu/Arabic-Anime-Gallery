@@ -1,174 +1,204 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Aoibu Travel — احجز رحلتك</title>
-  <meta name="description" content="Aoibu Travel: ابحث وقارن واحجز رحلاتك بسهولة.">
-  <link rel="icon" href="assets/img/favicon.png">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>محول التومان — دولار — دينار عراقي</title>
+
+ <!-- روابط الأيقونات -->
+  <link rel="icon" type="image/png" sizes="32x32" href="https://g.top4top.io/p_3540p5o080.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="https://h.top4top.io/p_35401w6ej1.png">
+  <link rel="apple-touch-icon" href="https://i.top4top.io/p_35406syps2.png">
+
+  <style>
+    :root{
+      --bg: #0f1724;
+      --card: #0b1220;
+      --accent: #06b6d4;
+      --muted: #98a0b3;
+      --glass: rgba(255,255,255,0.03);
+    }
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: "Segoe UI", Tahoma, "Noto Sans Arabic", sans-serif;
+      background: linear-gradient(180deg,#071226 0%, #071c2b 60%);
+      color:#e6eef7;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:24px;
+    }
+    .container{
+      width:100%;
+      max-width:980px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:14px;
+      box-shadow: 0 10px 30px rgba(2,6,23,0.7);
+      overflow:hidden;
+      display:grid;
+      grid-template-columns: 1fr 360px;
+    }
+    .main{padding:32px;}
+    header{display:flex;gap:12px;align-items:center;margin-bottom:18px;}
+    .logo{
+      width:56px;height:56px;border-radius:10px;
+      background:linear-gradient(135deg,var(--accent),#7c3aed);
+      display:flex;align-items:center;justify-content:center;font-weight:700;
+      color:#021224;font-size:20px;
+    }
+    h1{margin:0;font-size:20px}
+    p.lead{margin:6px 0 0;color:var(--muted);font-size:13px}
+    .card{
+      margin-top:18px;
+      background:var(--card);
+      border-radius:12px;
+      padding:18px;
+    }
+    label{font-size:13px;color:var(--muted);margin-bottom:6px;display:block}
+    input[type="number"], select{
+      width:100%;padding:12px 14px;border-radius:8px;
+      border:1px solid rgba(255,255,255,0.03);
+      background:var(--glass);color:inherit;font-size:16px;
+    }
+    .controls{display:flex;gap:10px;margin-top:12px}
+    button{
+      cursor:pointer;border:0;padding:10px 12px;border-radius:8px;font-weight:600;
+      background:linear-gradient(90deg,var(--accent),#8b5cf6);color:#021224;
+    }
+    .ghost{background:transparent;color:var(--accent);border:1px solid rgba(255,255,255,0.03)}
+    .small{padding:8px 10px;font-size:14px}
+    .results{margin-top:14px;display:grid;gap:8px}
+    .result{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      padding:12px;border-radius:8px;display:flex;justify-content:space-between;align-items:center;
+    }
+    .muted{color:var(--muted);font-size:13px}
+    .side{
+      padding:28px;background:linear-gradient(180deg, rgba(8,15,25,0.6), rgba(6,10,15,0.6));
+      display:flex;flex-direction:column;gap:14px;
+    }
+    .rate{background:rgba(255,255,255,0.02);padding:14px;border-radius:10px}
+    .kbd{background:rgba(255,255,255,0.03);padding:6px 8px;border-radius:6px;font-weight:700}
+    footer{margin-top:auto;color:var(--muted);font-size:13px}
+    @media(max-width:880px){.container{grid-template-columns:1fr}}
+  </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="#hero" aria-label="Aoibu Home">
-        <span class="brand-mark">✈️</span>
-        <span class="brand-text">Aoibu</span>
-      </a>
-      <nav class="nav" aria-label="التنقل الرئيسي">
-        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="قائمة">
-          ☰
-        </button>
-        <ul id="nav-menu" class="nav-menu">
-          <li><a href="#search">بحث</a></li>
-          <li><a href="#deals">عروض</a></li>
-          <li><a href="#destinations">وجهات</a></li>
-          <li><a href="#contact">تواصل</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <div class="container">
+    <main class="main">
+      <header>
+        <div class="logo">T⇄$</div>
+        <div>
+          <h1>محول التومان — دولار — دينار عراقي</h1>
+          <p class="lead">القاعدة: 10,000,000 تومان = 100$ = 143,000 د.ع</p>
+        </div>
+      </header>
 
-  <section id="hero" class="hero">
-    <div class="container hero-inner">
-      <h1>سافر مع <span class="accent">Aoibu</span></h1>
-      <p>ابحث، قارن، واحجز رحلاتك بسهولة وبأفضل الأسعار.</p>
-      <a class="btn btn-primary" href="#search">ابدأ الآن</a>
-    </div>
-  </section>
-
-  <main>
-    <section id="search" class="search-section">
-      <div class="container">
-        <h2>ابحث عن رحلتك</h2>
-        <form id="flight-form" class="flight-form" novalidate>
-          <div class="form-row">
-            <label for="from">من</label>
-            <input type="text" id="from" name="from" placeholder="مثال: بغداد (BGW)" required>
+      <section class="card">
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <div style="flex:1;min-width:220px">
+            <label>المبلغ</label>
+            <input id="amount" type="number" placeholder="أدخل المبلغ" value="10000000" />
           </div>
-          <div class="form-row">
-            <label for="to">إلى</label>
-            <input type="text" id="to" name="to" placeholder="مثال: إسطنبول (IST)" required>
-          </div>
-          <div class="form-row">
-            <label for="depart">تاريخ الذهاب</label>
-            <input type="date" id="depart" name="depart" required>
-          </div>
-          <div class="form-row">
-            <label for="return">تاريخ الإياب</label>
-            <input type="date" id="return" name="return">
-          </div>
-          <div class="form-row">
-            <label for="passengers">المسافرون</label>
-            <select id="passengers" name="passengers">
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
+          <div style="width:170px">
+            <label>من</label>
+            <select id="fromCurrency">
+              <option value="toman">تومان</option>
+              <option value="usd">$ دولار</option>
+              <option value="iqd">د.ع دينار</option>
             </select>
           </div>
-          <div class="form-row">
-            <label for="class">الدرجة</label>
-            <select id="class" name="class">
-              <option>اقتصادية</option>
-              <option>مميزة</option>
-              <option>رجال الأعمال</option>
-              <option>أولى</option>
+          <div style="width:170px">
+            <label>إلى</label>
+            <select id="toCurrency">
+              <option value="usd">$ دولار</option>
+              <option value="iqd">د.ع دينار</option>
+              <option value="toman">تومان</option>
             </select>
           </div>
-          <button type="submit" class="btn btn-primary">ابحث</button>
-          <p id="form-message" class="form-message" role="status" aria-live="polite"></p>
-        </form>
-      </div>
-    </section>
-
-    <section id="deals" class="deals-section">
-      <div class="container">
-        <h2>عروض مميزة</h2>
-        <div class="cards">
-          <article class="card">
-            <img src="assets/img/placeholder-1.jpg" alt="صورة لمدينة حديثة">
-            <div class="card-body">
-              <h3>إسطنبول — ابتداءً من 199$</h3>
-              <p>عِش سحر المضائق والأسواق التاريخية.</p>
-              <a class="btn btn-ghost" href="#search">احجز الآن</a>
-            </div>
-          </article>
-          <article class="card">
-            <img src="assets/img/placeholder-2.jpg" alt="شاطئ استوائي">
-            <div class="card-body">
-              <h3>دبي — ابتداءً من 249$</h3>
-              <p>ناطحات سحاب وتسوق بلا حدود.</p>
-              <a class="btn btn-ghost" href="#search">احجز الآن</a>
-            </div>
-          </article>
-          <article class="card">
-            <img src="assets/img/placeholder-3.jpg" alt="مدينة أوروبية كلاسيكية">
-            <div class="card-body">
-              <h3>أنطاليا — ابتداءً من 189$</h3>
-              <p>شواطئ ساحرة وأنشطة ممتعة للعائلة.</p>
-              <a class="btn btn-ghost" href="#search">احجز الآن</a>
-            </div>
-          </article>
         </div>
-      </div>
-    </section>
 
-    <section id="destinations" class="destinations-section">
-      <div class="container">
-        <h2>وجهات محبوبة</h2>
-        <div class="pill-grid">
-          <a class="pill" href="#search" aria-label="بغداد">بغداد</a>
-          <a class="pill" href="#search" aria-label="إسطنبول">إسطنبول</a>
-          <a class="pill" href="#search" aria-label="أنطاليا">أنطاليا</a>
-          <a class="pill" href="#search" aria-label="القاهرة">القاهرة</a>
-          <a class="pill" href="#search" aria-label="دبي">دبي</a>
-          <a class="pill" href="#search" aria-label="بيروت">بيروت</a>
+        <div class="controls">
+          <button id="convertBtn" class="small">حوّل</button>
+          <button id="swapBtn" class="ghost small">بدل ↔</button>
+          <button id="clearBtn" class="ghost small">مسح</button>
         </div>
-      </div>
-    </section>
 
-    <section id="contact" class="contact-section">
-      <div class="container">
-        <h2>تواصل معنا</h2>
-        <form id="contact-form" class="contact-form" novalidate>
-          <div class="form-row">
-            <label for="name">الاسم</label>
-            <input id="name" name="name" type="text" required placeholder="اسمك">
+        <div class="results">
+          <div class="result">
+            <div>
+              <div class="muted">النتيجة</div>
+              <div id="resultText" style="font-weight:700;font-size:18px">—</div>
+            </div>
+            <button id="copyBtn" class="small ghost">نسخ</button>
           </div>
-          <div class="form-row">
-            <label for="email">البريد الإلكتروني</label>
-            <input id="email" name="email" type="email" required placeholder="you@example.com">
-          </div>
-          <div class="form-row">
-            <label for="msg">رسالتك</label>
-            <textarea id="msg" name="msg" rows="4" required placeholder="كيف نقدر نساعدك؟"></textarea>
-          </div>
-          <button class="btn btn-primary" type="submit">إرسال</button>
-          <p id="contact-message" class="form-message" role="status" aria-live="polite"></p>
-        </form>
-      </div>
-    </section>
-  </main>
+        </div>
+      </section>
+    </main>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <span class="brand-mark">✈️</span> <strong>Aoibu</strong>
-      </div>
-      <div class="footer-links">
-        <a href="#hero">الرئيسية</a>
-        <a href="#search">البحث</a>
-        <a href="#deals">العروض</a>
-        <a href="#contact">التواصل</a>
-      </div>
-      <p class="legal">© <span id="year"></span> Aoibu. جميع الحقوق محفوظة. تصميم وتطوير أصلي.</p>
-    </div>
-  </footer>
 
-  <script src="assets/js/script.js"></script>
+    </aside>
+  </div>
+
+  <script>
+    const BASE_TOMAN = 10000000;
+    const BASE_USD = 100;
+    const BASE_IQD = 143000;
+
+    const USD_PER_TOMAN = BASE_USD / BASE_TOMAN;
+    const IQD_PER_TOMAN = BASE_IQD / BASE_TOMAN;
+    const TOMAN_PER_USD = BASE_TOMAN / BASE_USD;
+    const TOMAN_PER_IQD = BASE_TOMAN / BASE_IQD;
+
+    const amountInput = document.getElementById('amount');
+    const fromSelect = document.getElementById('fromCurrency');
+    const toSelect = document.getElementById('toCurrency');
+    const convertBtn = document.getElementById('convertBtn');
+    const swapBtn = document.getElementById('swapBtn');
+    const clearBtn = document.getElementById('clearBtn');
+    const resultText = document.getElementById('resultText');
+    const copyBtn = document.getElementById('copyBtn');
+
+    function convert(amount, from, to){
+      let tomanValue;
+      if(from === 'toman') tomanValue = amount;
+      else if(from === 'usd') tomanValue = amount * TOMAN_PER_USD;
+      else if(from === 'iqd') tomanValue = amount * TOMAN_PER_IQD;
+
+      if(to === 'toman') return tomanValue.toLocaleString() + ' تومان';
+      if(to === 'usd') return (tomanValue * USD_PER_TOMAN).toFixed(2) + ' $';
+      if(to === 'iqd') return Math.round(tomanValue * IQD_PER_TOMAN).toLocaleString() + ' د.ع';
+    }
+
+    function doConvert(){
+      const amount = parseFloat(amountInput.value) || 0;
+      resultText.textContent = convert(amount, fromSelect.value, toSelect.value);
+    }
+
+    convertBtn.addEventListener('click', doConvert);
+    amountInput.addEventListener('input', doConvert);
+    fromSelect.addEventListener('change', doConvert);
+    toSelect.addEventListener('change', doConvert);
+    swapBtn.addEventListener('click', ()=>{
+      const tmp = fromSelect.value;
+      fromSelect.value = toSelect.value;
+      toSelect.value = tmp;
+      doConvert();
+    });
+    clearBtn.addEventListener('click', ()=>{
+      amountInput.value = '';
+      resultText.textContent = '—';
+    });
+    copyBtn.addEventListener('click', async ()=>{
+      try{
+        await navigator.clipboard.writeText(resultText.textContent);
+        copyBtn.textContent = 'تم ✓';
+        setTimeout(()=>copyBtn.textContent='نسخ',1200);
+      }catch(e){alert('فشل النسخ');}
+    });
+
+    doConvert();
+  </script>
 </body>
 </html>
